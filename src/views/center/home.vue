@@ -7,7 +7,9 @@
             <div slot="nextArrow" class="custom-slick-arrow" style="right: 10px">
                 <a-icon type="right-circle" style="font-size:40px" />
             </div>
-            <div style="background-image:url(./static/images/Internet+.jpg);height:260px;margin-top:3px;background-position: center; background-repeat: no-repeat; background-size:100% 100%;"></div>
+            <div
+                style="background-image:url(./static/images/Internet+.jpg);height:260px;margin-top:3px;background-position: center; background-repeat: no-repeat; background-size:100% 100%;"
+            ></div>
             <div
                 style="background-image:url(./static/images/first_rate.jpg);height:260px;margin-top:3px;background-position: center; background-repeat: no-repeat; background-size:100% 100%;"
             ></div>
@@ -22,29 +24,37 @@
                             <div class="news_focus_list">
                                 <ul>
                                     <li>
-                                        <a href="javascrip:void(0);" target="_blank"
-                                            ><img src="../../assets/96a3b91.jpg" alt="我院参加2020年福建省高校学生返校复学实验室安全工作经验交流网络视频会议" />
-                                            <h2>
-                                                我院参加2020年福建省高校学生返校复学实验室安全工作经验交流网络视频会议
-                                            </h2></a
-                                        >
+                                        <a href="javascrip:void(0);" target="_blank">
+                                            <img
+                                                src="../../assets/96a3b91.jpg"
+                                                alt="我院参加2020年福建省高校学生返校复学实验室安全工作经验交流网络视频会议"
+                                            />
+                                            <h2>我院参加2020年福建省高校学生返校复学实验室安全工作经验交流网络视频会议</h2>
+                                        </a>
                                     </li>
                                     <li>
-                                        <a href="http://cyweb.xmzgzn.cn/cysyjx/?p=210" target="_blank"
-                                            ><img
+                                        <a
+                                            href="http://cyweb.xmzgzn.cn/cysyjx/?p=210"
+                                            target="_blank"
+                                        >
+                                            <img
                                                 src="../../assets/96a3b45.jpg"
                                                 alt="我院参加2020年福建省本科高校虚拟仿真实验教学项目建设与申报培训网络视频会议"
                                             />
-                                            <h2>
-                                                我院参加2020年福建省本科高校虚拟仿真实验教学项目建设与申报培训网络视频会议
-                                            </h2></a
-                                        >
+                                            <h2>我院参加2020年福建省本科高校虚拟仿真实验教学项目建设与申报培训网络视频会议</h2>
+                                        </a>
                                     </li>
                                     <li>
-                                        <a href="http://cyweb.xmzgzn.cn/cysyjx/?p=207" target="_blank"
-                                            ><img src="../../assets/96a3b90.jpg" alt="诚毅学子在全国供应链大赛喜获佳绩" />
-                                            <h2>诚毅学子在全国供应链大赛喜获佳绩</h2></a
+                                        <a
+                                            href="http://cyweb.xmzgzn.cn/cysyjx/?p=207"
+                                            target="_blank"
                                         >
+                                            <img
+                                                src="../../assets/96a3b90.jpg"
+                                                alt="诚毅学子在全国供应链大赛喜获佳绩"
+                                            />
+                                            <h2>诚毅学子在全国供应链大赛喜获佳绩</h2>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -52,69 +62,107 @@
                                 <ul></ul>
                             </div>
                             <div class="news_focus_cut">
-                                <span class="prev"> &lt; </span>
-                                <span class="next"> &gt; </span>
+                                <span class="prev">&lt;</span>
+                                <span class="next">&gt;</span>
                             </div>
                         </div>
                     </div>
                     <div class="fr">
                         <div class="index_news_con">
                             <ul class="tit">
-                                <li id="ph11" onmouseover="setTab(&#39;ph1&#39;,1,2)" class="active">
-                                    <a href="javascrip:void(0);" @click="changeMenuItem(centerTrends, centerNews)">中心资讯</a>
+                                <li
+                                    id="ph11"
+                                    onmouseover="setTab(&#39;ph1&#39;,1,2)"
+                                    class="active"
+                                >
+                                    <a
+                                        href="javascrip:void(0);"
+                                        @click="changeMenuItem(centerTrends, centerNews)"
+                                    >中心资讯</a>
                                 </li>
-                                <li id="ph12" onmouseover="setTab(&#39;ph1&#39;,2,2)" class="">
-                                    <a href="javascrip:void(0);" @click="changeMenuItem(centerTrends, centerNotice)">通知公告</a>
+                                <li id="ph12" onmouseover="setTab(&#39;ph1&#39;,2,2)" class>
+                                    <a
+                                        href="javascrip:void(0);"
+                                        @click="changeMenuItem(centerTrends, centerNotice)"
+                                    >通知公告</a>
                                 </li>
                             </ul>
                             <div class="list">
                                 <div id="con_ph1_1" style="display: block;">
                                     <ul>
                                         <li>
-                                            <a href="http://cyweb.xmzgzn.cn/cysyjx/?p=215" target="_blank"
-                                                >我院参加2020年福建省高校学生返校复学实验室安全工作经验交流网络视频会议</a
-                                            ><span>2020-05-22</span>
+                                            <a
+                                                href="http://cyweb.xmzgzn.cn/cysyjx/?p=215"
+                                                target="_blank"
+                                            >我院参加2020年福建省高校学生返校复学实验室安全工作经验交流网络视频会议</a>
+                                            <span>2020-05-22</span>
                                         </li>
                                         <li>
-                                            <a href="http://cyweb.xmzgzn.cn/cysyjx/?p=210" target="_blank"
-                                                >我院参加2020年福建省本科高校虚拟仿真实验教学项目建设与申报培训网络视频会议</a
-                                            ><span>2020-05-19</span>
+                                            <a
+                                                href="http://cyweb.xmzgzn.cn/cysyjx/?p=210"
+                                                target="_blank"
+                                            >我院参加2020年福建省本科高校虚拟仿真实验教学项目建设与申报培训网络视频会议</a>
+                                            <span>2020-05-19</span>
                                         </li>
                                         <li>
-                                            <a href="http://cyweb.xmzgzn.cn/cysyjx/?p=207" target="_blank">诚毅学子在全国供应链大赛喜获佳绩</a
-                                            ><span>2020-04-30</span>
+                                            <a
+                                                href="http://cyweb.xmzgzn.cn/cysyjx/?p=207"
+                                                target="_blank"
+                                            >诚毅学子在全国供应链大赛喜获佳绩</a>
+                                            <span>2020-04-30</span>
                                         </li>
                                         <li>
-                                            <a href="http://cyweb.xmzgzn.cn/cysyjx/?p=203" target="_blank">供应链管理专业通过教育部审批</a
-                                            ><span>2020-03-18</span>
+                                            <a
+                                                href="http://cyweb.xmzgzn.cn/cysyjx/?p=203"
+                                                target="_blank"
+                                            >供应链管理专业通过教育部审批</a>
+                                            <span>2020-03-18</span>
                                         </li>
                                         <li>
-                                            <a href="http://cyweb.xmzgzn.cn/cysyjx/?p=158" target="_blank"
-                                                >诚毅学子在第五届全国大学生物流仿真设计大赛福建赛区喜获佳绩</a
-                                            ><span>2019-11-18</span>
+                                            <a
+                                                href="http://cyweb.xmzgzn.cn/cysyjx/?p=158"
+                                                target="_blank"
+                                            >诚毅学子在第五届全国大学生物流仿真设计大赛福建赛区喜获佳绩</a>
+                                            <span>2019-11-18</span>
                                         </li>
                                         <li>
-                                            <a href="http://cyweb.xmzgzn.cn/cysyjx/?p=156" target="_blank">商船系召开船舶交通虚拟仿真实验教学中心建设研讨会</a
-                                            ><span>2019-09-18</span>
+                                            <a
+                                                href="http://cyweb.xmzgzn.cn/cysyjx/?p=156"
+                                                target="_blank"
+                                            >商船系召开船舶交通虚拟仿真实验教学中心建设研讨会</a>
+                                            <span>2019-09-18</span>
                                         </li>
                                         <li>
-                                            <a href="http://cyweb.xmzgzn.cn/cysyjx/?p=153" target="_blank">诚毅学子获全国大学生智慧供应链创新创业挑战赛三等奖</a
-                                            ><span>2019-06-04</span>
+                                            <a
+                                                href="http://cyweb.xmzgzn.cn/cysyjx/?p=153"
+                                                target="_blank"
+                                            >诚毅学子获全国大学生智慧供应链创新创业挑战赛三等奖</a>
+                                            <span>2019-06-04</span>
                                         </li>
                                     </ul>
                                     <div class="more">
-                                        <a href="javascrip:void(0);" @click="changeMenuItem(centerTrends, centerNews)" style="color:black">更多&gt;&gt;</a>
+                                        <a
+                                            href="javascrip:void(0);"
+                                            @click="changeMenuItem(centerTrends, centerNews)"
+                                            style="color:black"
+                                        >更多&gt;&gt;</a>
                                     </div>
                                 </div>
                                 <div id="con_ph1_2" style="display: none;">
                                     <ul>
                                         <li>
-                                            <a href="http://cyweb.xmzgzn.cn/cysyjx/?p=138" target="_blank">2018年省级虚拟仿真实验教学中心申报说明</a
-                                            ><span>2018-06-01</span>
+                                            <a
+                                                href="http://cyweb.xmzgzn.cn/cysyjx/?p=138"
+                                                target="_blank"
+                                            >2018年省级虚拟仿真实验教学中心申报说明</a>
+                                            <span>2018-06-01</span>
                                         </li>
                                     </ul>
                                     <div class="more">
-                                        <a href="javascrip:void(0);" @click="changeMenuItem(centerTrends, centerNews)">更多&gt;&gt;</a>
+                                        <a
+                                            href="javascrip:void(0);"
+                                            @click="changeMenuItem(centerTrends, centerNews)"
+                                        >更多&gt;&gt;</a>
                                     </div>
                                 </div>
                             </div>
@@ -131,19 +179,20 @@
                 </div>
                 <div class="clear"></div>
                 <div class="index_about_main">
-                    <div class="fl"><img src="../../assets/qq.jpg" /></div>
+                    <div class="fl">
+                        <img src="../../assets/qq.jpg" />
+                    </div>
                     <div class="fr">
                         <div class="con">
                             <div class="txt">
-                                <em
-                                    >CHENGYI<br />
-                                    UNIVERSITY COLLEGE</em
-                                ><span>检测与自动控制虚拟仿真实验教学中心</span>
+                                <em>
+                                    CHENGYI
+                                    <br />UNIVERSITY COLLEGE
+                                </em>
+                                <span>检测与自动控制虚拟仿真实验教学中心</span>
                             </div>
                             <div class="des">
-                                <p>
-                                    集美大学诚毅学院创办初始，航海技术专业就作为学院的一个特色专业开始招生。为满足航海类专业课程实践教学的需要，学院于2005年9月筹建船舶操纵模拟器实验室，2007年7月建成投入使用。
-                                </p>
+                                <p>集美大学诚毅学院创办初始，航海技术专业就作为学院的一个特色专业开始招生。为满足航海类专业课程实践教学的需要，学院于2005年9月筹建船舶操纵模拟器实验室，2007年7月建成投入使用。</p>
                                 <p>
                                     船舶操纵模拟器是大型的、综合性的训练设备。实验室配备有国内第一套360°视景航海模拟器，由挪威KONGSBERG MARTIME
                                     AS公司生产，系统的硬件和软件按挪威船级社(DNV)有关航海模拟器的A级标准进行配置，其性能满足国际海事组织(IMO)和中华人民共和国海事局(CHINA
@@ -154,16 +203,22 @@
                     </div>
                 </div>
                 <div class="clear"></div>
-                <div class="index_about_txt" style="">
+                <div class="index_about_txt" style>
                     <div class="con">
                         <div class="item item01">
-                            <a target="_blank" @click="changeMenuItem(teachersTroop, centerDirector)">
+                            <a
+                                target="_blank"
+                                @click="changeMenuItem(teachersTroop, centerDirector)"
+                            >
                                 <div class="img"></div>
                                 <div class="desc">中心主任</div>
                             </a>
                         </div>
                         <div class="item item02">
-                            <a target="_blank" @click="changeMenuItem(achievements, scientificResearchAchievements)">
+                            <a
+                                target="_blank"
+                                @click="changeMenuItem(achievements, scientificResearchAchievements)"
+                            >
                                 <div class="img"></div>
                                 <div class="desc">科研成果</div>
                             </a>
@@ -175,7 +230,10 @@
                             </a>
                         </div>
                         <div class="item item04">
-                            <a @click="changeMenuItem(equipmentAndEnvironment, laboratoryEnvironment)" target="_blank">
+                            <a
+                                @click="changeMenuItem(equipmentAndEnvironment, laboratoryEnvironment)"
+                                target="_blank"
+                            >
                                 <div class="img"></div>
                                 <div class="desc">实验室环境</div>
                             </a>
@@ -192,6 +250,67 @@
                 <div class="links_btn">
                     <a @click="changeMenuItem(generalProfile, profile)" target="_blank">更多详细</a>
                 </div>
+            </div>
+        </div>
+        <div class="index_sys_wrap">
+            <div class="w1200">
+                <div class="index_tit">
+                    <p>TEACHING PLATFORM</p>
+                    <h2>虚拟仿真实验教学平台</h2>
+                </div>
+                <div class="clear"></div>
+                <div class="index_sys_con">
+                    <div class="swiper-container swiper-container-horizontal">
+                        <div
+                            class="swiper-wrapper"
+                            style="transition-duration: 0ms; background-color: rosybrown;"
+                        >
+                            <a-row type="flex" justify="space-around" align="middle">
+                                <a-col :span="4">
+                                    <div class="imgbg">
+                                        <img src="../../assets/96a3b94.jpg" />
+                                    </div>
+                                    <p
+                                        style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
+                                    >微控制器编程平台</p>
+                                </a-col>
+                                <a-col :span="4">
+                                    <div class="imgbg">
+                                        <img src="../../assets/96a3b94.jpg" />
+                                    </div>
+                                    <p
+                                        style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
+                                    >机器人编程平台</p>
+                                </a-col>
+                                <a-col :span="4">
+                                    <div class="imgbg">
+                                        <img src="../../assets/96a3b94.jpg" />
+                                    </div>
+                                    <p
+                                        style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
+                                    >动态抓取实验</p>
+                                </a-col>
+                                <a-col :span="4">
+                                    <div class="imgbg">
+                                        <img src="../../assets/96a3b94.jpg" />
+                                    </div>
+                                    <p
+                                        style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
+                                    >PID控制实验</p>
+                                </a-col>
+                                <a-col :span="4">
+                                    <div class="imgbg">
+                                        <img src="../../assets/96a3b94.jpg" />
+                                    </div>
+                                    <p
+                                        style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
+                                    >其他教学资源</p>
+                                </a-col>
+                            </a-row>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
             </div>
         </div>
         <!-- <div class="index_scene_wrap">
@@ -250,7 +369,7 @@
           >
         </div>
       </div>
-    </div> -->
+        </div>-->
     </div>
 </template>
 
