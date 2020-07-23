@@ -1,0 +1,52 @@
+.ant-layout-footer {
+  padding: 0px 209px;
+  color: #929292;
+  font-size: 14px;
+  background: #222222;
+}
+
+.layout {
+  height: 100%;
+}
+.footer_wrap {
+  width: 100%;
+  height: 200px;
+  float: center;
+  background: #222;
+  width: 80%;
+  margin: 0px auto;
+}
+.footer_logo {
+  padding: 20px 0px 20px 0px;
+  text-align: left;
+}
+.footer_logo img {
+  width: 286px;
+  height: 55px;
+}
+.footer_nav {
+  width: 1200px;
+  height: 45px;
+  border-bottom: 0px solid #929292;
+  margin-left: -39px;
+}
+.footer_nav ul li {
+  float: left;
+  margin-right: 20px;
+  line-height: 40px;
+  margin: center;
+}
+.footer_nav ul li a {
+  color: #929292;
+}
+.footer_nav ul li a:hover {
+  color: #f1f1f1;
+}
+.footer_wrap .copyright {
+  padding: 10px 0px;
+}
+.footer_wrap .copyright span {
+  color: #929292;
+  padding-right: 20px;
+  float: left;
+}
