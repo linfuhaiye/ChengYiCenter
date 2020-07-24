@@ -267,44 +267,54 @@
                         >
                             <a-row type="flex" justify="space-around" align="middle">
                                 <a-col :span="4">
-                                    <div class="imgbg">
-                                        <img src="../../assets/96a3b94.jpg" />
-                                    </div>
-                                    <p
-                                        style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
-                                    >微控制器编程平台</p>
+                                    <a href="http://baidu.com" target="_blank">
+                                        <div class="imgbg">
+                                            <img src="../../assets/MicroControl.png" />
+                                        </div>
+                                        <p
+                                            style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
+                                        >微控制器编程平台</p>
+                                    </a>
                                 </a-col>
                                 <a-col :span="4">
-                                    <div class="imgbg">
-                                        <img src="../../assets/96a3b94.jpg" />
-                                    </div>
-                                    <p
-                                        style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
-                                    >机器人编程平台</p>
+                                    <a href="http://baidu.com" target="_blank">
+                                        <div class="imgbg">
+                                            <img src="../../assets/Programming .jpg" />
+                                        </div>
+                                        <p
+                                            style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
+                                        >机器人编程平台</p>
+                                    </a>
                                 </a-col>
                                 <a-col :span="4">
-                                    <div class="imgbg">
-                                        <img src="../../assets/96a3b94.jpg" />
-                                    </div>
-                                    <p
-                                        style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
-                                    >动态抓取实验</p>
+                                    <a href="http://baidu.com" target="_blank">
+                                        <div class="imgbg">
+                                            <img src="../../assets/DynamicGrab.jpg" />
+                                        </div>
+                                        <p
+                                            style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
+                                        >动态抓取实验</p>
+                                    </a>
                                 </a-col>
                                 <a-col :span="4">
-                                    <div class="imgbg">
-                                        <img src="../../assets/96a3b94.jpg" />
-                                    </div>
-                                    <p
-                                        style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
-                                    >PID控制实验</p>
+                                    <a href="http://baidu.com" target="_blank">
+                                        <div class="imgbg">
+                                            <img src="../../assets/control.jpg" />
+                                        </div>
+                                        <p
+                                            style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
+                                        >PID控制实验</p>
+                                    </a>
                                 </a-col>
                                 <a-col :span="4">
-                                    <div class="imgbg">
-                                        <img src="../../assets/96a3b94.jpg" />
-                                    </div>
-                                    <p
-                                        style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
-                                    >其他教学资源</p>
+                                    <a href="http://baidu.com" target="_blank">
+                                        <div class="imgbg">
+                                            <img src="../../assets/other.jpg" />
+                                        </div>
+                                        <p
+                                            style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
+                                        >其他教学资源</p>
+                                    </a>
                                 </a-col>
                             </a-row>
                         </div>
