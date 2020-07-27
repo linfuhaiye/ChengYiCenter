@@ -22,7 +22,7 @@
                     <div class="fl">
                         <div class="news_focus_wrap">
                             <div class="news_focus_list">
-                                <video width="550px" height="330px" autoplay controls="controls">
+                                <video width="100%" height="330px" autoplay controls="controls">
                                     <source
                                         src="/center/static/videos/home.mov"
                                         type="video/mp4"

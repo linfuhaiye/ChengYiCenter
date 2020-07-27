@@ -101,7 +101,7 @@
   overflow: hidden;
 }
 .news_focus_list {
-  width: 550px;
+  width: 100%;
   height: 330px;
   position: relative;
   overflow: hidden;
@@ -184,16 +184,18 @@
   position: relative;
 }
 .index_about_main .fl {
-  width: 635px;
+  width: 50%;
   height: 357px;
   display: inline-block;
   position: absolute;
   top: 0px;
-  left: 5%;
+  left: 1%;
   z-index: 9;
+
+
 }
 .index_about_main .fr {
-  width: 720px;
+  width: 50%;
   height: 380px;
   display: inline-block;
   position: absolute;
@@ -203,10 +205,9 @@
   background: url(../../assets/index_about_bg.jpg) #eeeeee no-repeat right bottom;
 }
 .index_about_main .fr .con {
-  width: 500px;
+  width: 100%;
   height: 320px;
   float: right;
-  margin: 20px 30px 0px 10px;
 }
 .index_about_main .fr .txt em {
   font-size: 30px;
