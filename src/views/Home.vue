@@ -131,9 +131,9 @@ body {
     background-position: 0px -20px;
 }
 .logo {
-    margin: 20px 0px;
+    /* margin: 20px 0px; */
     width: 1200px;
-    margin: 0px auto;
+    margin: 20px auto;
     text-align: left;
 }
 .logo img {

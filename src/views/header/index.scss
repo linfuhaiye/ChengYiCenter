@@ -31,7 +31,7 @@
 .logo {
   margin: 20px 0px;
   width: 1200px;
-  margin: 0px auto;
+  margin: 21px auto;
   text-align: left;
 }
 .logo span {
@@ -39,6 +39,12 @@
   color: #d0021b;
   line-height: 81px;
   padding-left: 20px;
+}
+.logo img {
+  display: inline-block;
+  width: 453px;
+  margin-top: -16px;
+
 }
 
 .nav_wrap {

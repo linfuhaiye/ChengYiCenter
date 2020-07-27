@@ -105,7 +105,7 @@
                     <div class="swiper-container swiper-container-horizontal">
                         <div
                             class="swiper-wrapper"
-                            style="transition-duration: 0ms; background-color: #7f6f6f;"
+                            style="transition-duration: 0ms;"
                         >
                             <a-row type="flex" justify="space-around" align="middle">
                                 <a-col :span="4">
