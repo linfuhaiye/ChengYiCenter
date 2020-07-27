@@ -6,16 +6,21 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        // 场景
+        // 所有才当
         menus: [],
 
         // 菜单
         menu: {
-            code: 'Home'
+            code: 'HOME'
         },
 
         // 菜单项
         menuItem: {},
+
+        // 显示的文档
+        showDocument: {
+            content: '没有内容'
+        },
 
         // 身份信息：token
         token: getToken()
@@ -29,6 +34,17 @@ export default new Vuex.Store({
          */
         setMenus(state, data) {
             state.menus = data.menus;
+        },
+
+        /**
+         * 初始化显示文档
+         * 
+         * @param {*} state 状态
+         */
+        initialShowDocument(state) {
+            state.showDocument =  {
+                content: '没有内容'
+            };
         },
 
         /**
@@ -55,6 +71,18 @@ export default new Vuex.Store({
         changeMenuItem(state, data) {
             state.menu = data.menu;
             state.menuItem = data.menuItem;
+        },
+
+        /**
+         * 修改显示文档
+         * 
+         * @param {*} state 状态
+         * @param {*} data 数据
+         */
+        changeShowDocument(state, data) {
+            state.menu = data.menu;
+            state.menuItem = data.menuItem;
+            state.showDocument = data.showDocument;
         },
 
         /**

@@ -2,38 +2,32 @@
     <div class="footer_wrap">
         <div class="w1200">
             <!-- 上半部分 -->
-            <div>
+            <div style="margin-top:18px;">
                 <a-row>
                     <!-- 才当 -->
-                    <a-col :span="12">
-                        <a-row>
-                            <a-col><a href="http://cyweb.xmzgzn.cn/cysyjx/?custom_list_about=intro">中心首页</a></a-col>
-                            <a-col><a href="http://cyweb.xmzgzn.cn/cysyjx/?custom_list_about=intro">中心概况</a></a-col>
-                        </a-row>
-                        <a-row>
-                            <a-col><a href="http://cyweb.xmzgzn.cn/cysyjx/?cat=1">中心动态</a></a-col>
-                            <a-col><a href="http://cyweb.xmzgzn.cn/cysyjx/?custom_list_team=director">师资队伍</a></a-col>
-                        </a-row>
-                        <a-row>
-                            <a-col><a href="http://cyweb.xmzgzn.cn/cysyjx/?custom_cat_ach=scientific">中心成果</a></a-col>
-                            <a-col><a href="http://cyweb.xmzgzn.cn/cysyjx/?custom_cat_rules=centre">规章制度</a></a-col>
-                        </a-row>
-                        <a-row>
-                            <a-col><a href="http://cyweb.xmzgzn.cn/cysyjx/?custom_list_resource=system">教学资源</a></a-col>
-                            <a-col><a href="http://chengyi.jmu.edu.cn/">学院首页</a></a-col>
-                        </a-row>
+                    <a-col :span="10">
+                        <a-col :span="10">
+                            <div v-for="(menu) in filterMenus1" :key="menu.id"  @click="changeMenu(menu)" style="cursor: pointer; color: white;">
+                                {{menu.name}}
+                            </div>
+                        </a-col>
+                        <a-col :span="5">
+                            <div v-for="(menu) in filterMenus2" :key="menu.id" @click="changeMenu(menu)" style="cursor: pointer; color: white;">
+                                {{menu.name}}
+                            </div>
+                        </a-col>
                     </a-col>
                     <!-- 图标 -->
-                    <a-col>
+                    <a-col :span="8">
                         <div class="footer_logo">
-                            <a href="#"><img src="../../assets/footer_logo.png"/></a>
+                            <a href="javascript:void(0);"><img src="../../assets/footer_logo.png"/></a>
                         </div>
                     </a-col>
                 </a-row>
             </div>
             <div class="clear"></div>
             <!-- 下半部分 -->
-            <div>
+            <div style="margin-bottom:18px; color:white;">
                 <a-row justify="center">
                     <a-col offset="6" span="7">联系地址：厦门市集美区集美大道199号</a-col>
                     <a-col span="6">联系电话：0592-6183811</a-col>
@@ -48,7 +42,52 @@
 
 <script>
 import './index.scss';
-export default {};
+export default {
+    name: 'footer',
+    data() {
+        return {
+            menus: this.$store.state.menus
+        }
+    },
+    computed: {
+        watchMenus() {
+            return this.$store.state.menus;
+        },
+        filterMenus1() {
+            return this.menus.filter((item, index) => {
+                return index<4;
+            })
+        },
+        filterMenus2() {
+            return this.menus.filter((item, index) => {
+                return index>3;
+            })
+        }
+    },
+    mounted() {
+        if (this.$store.state.menus.length > 0) {
+            this._initial(this.$store.state.menus);
+        }
+    },
+    watch: {
+        watchMenus(newVal) {
+            this._initial(newVal);
+        }
+    },
+    methods: {
+        _initial(newVal) {
+            this.menus = newVal
+        },
+        changeMenu(menu) {
+            if (typeof menu.jump_link !== 'undefined' && menu.jump_link !== null) {
+                window.open(menu.jump_link,"_blank")
+            } else {
+                this.$store.commit('changeMenu', { menu: menu });
+                this.$store.commit('initialShowDocument');
+            }
+        },
+    }
+};
 </script>
 
 <style></style>

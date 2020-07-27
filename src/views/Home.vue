@@ -16,7 +16,7 @@
                     <Header />
                 </a-layout-header>
                 <a-layout-content align="middle" :style="{ padding: '0 50px', marginTop: '210px' }">
-                    <div v-if="this.$store.state.menu.code === 'Home'">
+                    <div v-if="this.$store.state.menu.code === 'HOME'">
                         <center-home></center-home>
                     </div>
                     <div v-else>
@@ -65,7 +65,7 @@ body {
     padding: 0px 120px;
     color: #929292;
     font-size: 14px;
-    background: #222222;
+  background: url('/center/static/images/foot-1.jpg') no-repeat center top;
 }
 #components-layout-demo-basic .ant-layout-content {
     color: rgb(0, 0, 0);
@@ -258,10 +258,10 @@ export default {
         _noAuthLogin() {
             noAuthLogin()
                 .then(() => {
-                    this.$message.success('登录成功');
+                    console.debug('登录成功');
                 })
                 .catch(() => {
-                    this.$message.error('登陆失败，请刷新当前页面');
+                    console.debug('登陆失败，请刷新当前页面');
                 });
         }
     }

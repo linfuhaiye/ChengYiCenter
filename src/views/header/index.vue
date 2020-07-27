@@ -16,7 +16,7 @@
                             </li>
                             <li v-for="menu in filterMenus" :key="menu.id">
                                 <a href="javascript:void(0);" @click="changeMenu(menu)">{{ menu.name }}</a>
-                                <div v-if="menu.has_child === 1 && typeof menu.children !== 'undefined' && menu.children.length > 0" class="subnav">
+                                <div v-if="menu.has_child === '1' && typeof menu.children !== 'undefined' && menu.children.length > 0" class="subnav">
                                     <div v-for="menuItem in menu.children" :key="menuItem.id" class="subnav-box">
                                         <a href="javascript:void(0);" @click="changeMenuItem(menu, menuItem)">{{ menuItem.name }}</a>
                                     </div>
@@ -40,18 +40,18 @@ export default {
     data() {
         return {
             menus: [],
-            url: '/online/cgform/api/getData/49472539ad944785bf5aafa488e59966'
+            menuUrl: '/online/cgform/api/getTreeData/497b842359a248bcbc310c2c1a131c74',
         };
     },
     computed: {
         filterHome: function() {
             return this.menus.filter(function(menu) {
-                return menu.code === 'Home';
+                return menu.code === 'HOME';
             });
         },
         filterMenus: function() {
             return this.menus.filter(function(menu) {
-                return menu.code !== 'Home';
+                return menu.code !== 'HOME';
             });
         }
     },
@@ -65,20 +65,21 @@ export default {
             });
         },
         _getData() {
-            request({
-                url: this.url,
+           request({
+                url: this.menuUrl,
                 method: 'get',
                 params: {
                     _t: new Date().getTime(),
-                    parent_id: '4028bb817305cdab01730d627ddf0024',
-                    column: 'createTime',
-                    order: 'esc',
+                    pid: '1286502364953452545',
+                    column: 'sort_no',
+                    order: 'asc',
                     pageNo: 1,
-                    pageSize: 10,
-                    superQueryMatchType: 'and'
+                    pageSize: 20,
+                    has_child: 1
                 }
             })
                 .then(resData => {
+                    console.log("_getMenus***:", resData)
                     if (typeof resData.result.records !== 'undefined' && resData.result.records.length > 0) {
                         this.menus = resData.result.records;
                         this._getMenuItems(this.menus);
@@ -91,49 +92,59 @@ export default {
         _getMenuItems(menus) {
             if (menus.length > 0) {
                 menus.forEach(menu => {
-                    request({
-                        url: this.url,
-                        method: 'get',
-                        params: {
-                            _t: new Date().getTime(),
-                            parent_id: menu.id,
-                            column: 'createTime',
-                            order: 'esc',
-                            pageNo: 1,
-                            pageSize: 20,
-                            superQueryMatchType: 'and'
-                        }
-                    })
-                        .then(resData => {
-                            if (typeof resData.result.records != 'undefined' && resData.result.records.length > 0) {
-                                let newMenus = [];
-                                this.menus.forEach(newMenu => {
-                                    let addMenu = {};
-                                    if (newMenu.id === resData.result.records[0].parent_id) {
-                                        addMenu = {
-                                            children: resData.result.records,
-                                            ...newMenu
-                                        };
-                                        newMenus.push(addMenu);
-                                    } else {
-                                        newMenus.push(newMenu);
-                                    }
-                                });
-                                this.menus = newMenus;
-                                this.setMenus(newMenus);
+                    if (menu.has_child === "1") {
+                        request({
+                            url: this.menuUrl,
+                            method: 'get',
+                            params: {
+                                _t: new Date().getTime(),
+                                pid: menu.id,
+                                column: 'sort_no',
+                                order: 'asc',
+                                pageNo: 1,
+                                pageSize: 20,
+                                has_child: 1
                             }
                         })
-                        .catch(() => {
-                            menu.children = [];
-                        });
+                            .then(resData => {
+                                console.log('_getMenuItems:==',resData)
+                                if (typeof resData.result.records != 'undefined' && resData.result.records.length > 0) {
+                                    let newMenus = [];
+                                    this.menus.forEach(newMenu => {
+                                        let addMenu = {};
+                                        if (newMenu.id === resData.result.records[0].pid) {
+                                            addMenu = {
+                                                children: resData.result.records,
+                                                ...newMenu
+                                            };
+                                            newMenus.push(addMenu);
+                                        } else {
+                                            newMenus.push(newMenu);
+                                        }
+                                    });
+                                    this.menus = newMenus;
+                                    this.setMenus(newMenus);
+                                }
+                                console.log(this.menus)
+                            })
+                            .catch(() => {
+                                menu.children = [];
+                            });
+                    }
                 });
             }
         },
         changeMenu(menu) {
-            this.$store.commit('changeMenu', { menu: menu });
+            if (typeof menu.jump_link !== 'undefined' && menu.jump_link !== null) {
+                window.open(menu.jump_link,"_blank")
+            } else {
+                this.$store.commit('changeMenu', { menu: menu });
+                this.$store.commit('initialShowDocument');
+            }
         },
         changeMenuItem(menu, menuItem) {
             this.$store.commit('changeMenuItem', { menu: menu, menuItem: menuItem });
+            this.$store.commit('initialShowDocument');
         },
         setMenus(menus) {
             this.$store.commit('setMenus', { menus: menus });

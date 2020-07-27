@@ -1,8 +1,7 @@
 .ant-layout-footer {
-  padding: 0px 209px;
   color: #929292;
   font-size: 14px;
-  background: #222222;
+  background: url('/center/static/images/foot-1.jpg') no-repeat center top;
 }
 
 .layout {
@@ -10,9 +9,8 @@
 }
 .footer_wrap {
   width: 100%;
-  height: 200px;
   float: center;
-  background: #222;
+  background: none;
   width: 80%;
   margin: 0px auto;
 }
