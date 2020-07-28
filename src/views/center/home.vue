@@ -8,7 +8,7 @@
                 <a-icon type="right-circle" style="font-size:40px" />
             </div>
             <div
-                style="background-image:url(./static/images/Internet+.jpg);height:260px;margin-top:3px;background-position: center; background-repeat: no-repeat; background-size:100% 100%;"
+                style="background-image:url(./static/images/graduate.png);height:260px;margin-top:3px;background-position: center; background-repeat: no-repeat; background-size:100% 100%;"
             ></div>
             <div
                 style="background-image:url(./static/images/first_rate.jpg);height:260px;margin-top:3px;background-position: center; background-repeat: no-repeat; background-size:100% 100%;"
