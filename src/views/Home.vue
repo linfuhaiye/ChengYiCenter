@@ -132,7 +132,7 @@ body {
 }
 .logo {
     /* margin: 20px 0px; */
-    width: 1200px;
+    width: 100%;
     margin: 20px auto;
     text-align: left;
 }
@@ -148,7 +148,7 @@ body {
 }
 
 .nav_wrap {
-    width: 1200px;
+    width: 100%;
     height: 50px;
     background: #b54436;
     margin: 0px auto;
@@ -208,6 +208,7 @@ body {
 }
 .nav li:hover .subnav {
     display: block;
+    min-width: 100%;
 }
 .nav li:hover a,
 .nav li.current a {

@@ -3,7 +3,7 @@
 }
 .fr {
   float: left;
-  margin-top: -9px;
+  // margin-top: -9px;
   width: 49.5%;
 }
 .index_news_wrap {
@@ -414,12 +414,12 @@
   background: #f5f5f5;
 }
 .ny_con {
-  width: 1200px;
+  width: 100%;
   margin: 0px auto;
   padding: 25px 0px;
 }
 .ny_con .fl {
-  width: 230px;
+  width: 19%;
   position: sticky;
   position: -webkit-sticky;
   position: -moz-sticky;
@@ -427,11 +427,11 @@
   background: #fff;
 }
 .ny_con .fr {
-  width: 950px;
+  width: 80%;
   background: #fff;
 }
 .ny_con .fl .nav_tit {
-  width: 227px;
+  width: 100%;
   height: 65px;
   font-size: 20px;
   line-height: 65px;
@@ -440,12 +440,12 @@
   color: #fff;
 }
 .ny_con .fl ul li {
-  width: 180px;
+  width: 100%;
   border-bottom: 1px solid #f1f1f1;
 }
 .ny_con .fl ul li a {
   display: block;
-  width: 227px;
+  width: 100%;
   height: 45px;
   line-height: 45px;
   padding-left: 30px;
@@ -473,7 +473,7 @@
 .ny_con .fl ul li.current-menu-item a {
   background: #db795f;
   color: #fff;
-  width: 227px;
+  width: 100%;
 }
 .ny_con .fl ul li.current-post-parent a {
   background: #db795f;
@@ -503,14 +503,15 @@
 }
 .ny_wrap .news_list dl dt {
   text-align: left;
+  width: 25%;
 }
 .ny_wrap .news_list dl dt img {
-  width: 333px;
+  width: 100%;
   height: 200px;
   overflow: hidden;
 }
 .ny_wrap .news_list dl dd {
-  width: 470px;
+  width: 72%;
   float: right;
   margin-left: 20px;
   margin-top: -210px;

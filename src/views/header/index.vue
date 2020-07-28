@@ -15,10 +15,23 @@
                                 <a href="javascript:void(0);" @click="changeMenu(filterHome[0])">首页</a>
                             </li>
                             <li v-for="menu in filterMenus" :key="menu.id">
-                                <a href="javascript:void(0);" @click="changeMenu(menu)">{{ menu.name }}</a>
-                                <div v-if="menu.has_child === '1' && typeof menu.children !== 'undefined' && menu.children.length > 0" class="subnav">
-                                    <div v-for="menuItem in menu.children" :key="menuItem.id" class="subnav-box">
-                                        <a href="javascript:void(0);" @click="changeMenuItem(menu, menuItem)">{{ menuItem.name }}</a>
+                                <a
+                                    href="javascript:void(0);"
+                                    @click="changeMenu(menu)"
+                                >{{ menu.name }}</a>
+                                <div
+                                    v-if="menu.has_child === '1' && typeof menu.children !== 'undefined' && menu.children.length > 0"
+                                    class="subnav"
+                                >
+                                    <div
+                                        v-for="menuItem in menu.children"
+                                        :key="menuItem.id"
+                                        class="subnav-box"
+                                    >
+                                        <a
+                                            href="javascript:void(0);"
+                                            @click="changeMenuItem(menu, menuItem)"
+                                        >{{ menuItem.name }}</a>
                                     </div>
                                 </div>
                             </li>
@@ -40,7 +53,7 @@ export default {
     data() {
         return {
             menus: [],
-            menuUrl: '/online/cgform/api/getTreeData/497b842359a248bcbc310c2c1a131c74',
+            menuUrl: '/online/cgform/api/getTreeData/497b842359a248bcbc310c2c1a131c74'
         };
     },
     computed: {
@@ -65,7 +78,7 @@ export default {
             });
         },
         _getData() {
-           request({
+            request({
                 url: this.menuUrl,
                 method: 'get',
                 params: {
@@ -79,7 +92,6 @@ export default {
                 }
             })
                 .then(resData => {
-                    console.log("_getMenus***:", resData)
                     if (typeof resData.result.records !== 'undefined' && resData.result.records.length > 0) {
                         this.menus = resData.result.records;
                         this._getMenuItems(this.menus);
@@ -92,7 +104,7 @@ export default {
         _getMenuItems(menus) {
             if (menus.length > 0) {
                 menus.forEach(menu => {
-                    if (menu.has_child === "1") {
+                    if (menu.has_child === '1') {
                         request({
                             url: this.menuUrl,
                             method: 'get',
@@ -107,7 +119,6 @@ export default {
                             }
                         })
                             .then(resData => {
-                                console.log('_getMenuItems:==',resData)
                                 if (typeof resData.result.records != 'undefined' && resData.result.records.length > 0) {
                                     let newMenus = [];
                                     this.menus.forEach(newMenu => {
@@ -125,7 +136,6 @@ export default {
                                     this.menus = newMenus;
                                     this.setMenus(newMenus);
                                 }
-                                console.log(this.menus)
                             })
                             .catch(() => {
                                 menu.children = [];
@@ -136,7 +146,7 @@ export default {
         },
         changeMenu(menu) {
             if (typeof menu.jump_link !== 'undefined' && menu.jump_link !== null) {
-                window.open(menu.jump_link,"_blank")
+                window.open(menu.jump_link, '_blank');
             } else {
                 this.$store.commit('changeMenu', { menu: menu });
                 this.$store.commit('initialShowDocument');

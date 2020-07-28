@@ -23,10 +23,7 @@
                         <div class="news_focus_wrap">
                             <div class="news_focus_list">
                                 <video width="550px" height="330px" autoplay controls="controls">
-                                    <source
-                                        src="/center/static/videos/home.mov"
-                                        type="video/mp4"
-                                    />
+                                    <source src="/center/static/videos/home.mov" type="video/mp4" />
                                 </video>
                             </div>
                             <div class="news_focus_dot">
@@ -103,10 +100,7 @@
                 <div class="clear"></div>
                 <div class="index_sys_con">
                     <div class="swiper-container swiper-container-horizontal">
-                        <div
-                            class="swiper-wrapper"
-                            style="transition-duration: 0ms;"
-                        >
+                        <div class="swiper-wrapper" style="transition-duration: 0ms;">
                             <a-row type="flex" justify="space-around" align="middle">
                                 <a-col :span="4">
                                     <a href="http://baidu.com" target="_blank">
@@ -329,10 +323,8 @@ export default {
     },
     methods: {
         _initial(menus) {
-            console.log('初始化');
             if (menus.length > 0) {
                 menus.forEach(menu => {
-                    console.log('initial:', menu);
                     switch (menu.id) {
                         // 中心动态
                         case '1286503467271069697': {
@@ -478,7 +470,6 @@ export default {
                                     });
                                     this.menus = newMenus;
                                 }
-                                console.log('newMenus:', this.menus);
                             })
                             .catch(() => {
                                 menu.children = [];
@@ -489,7 +480,6 @@ export default {
         },
         // 获取中心资讯
         _getCenterNews() {
-            console.log(this.centerNews);
             request({
                 url: this.documentUrl,
                 method: 'get',
@@ -504,7 +494,6 @@ export default {
                 }
             })
                 .then(resData => {
-                    console.log('_getCenterNews:', resData);
                     if (typeof resData.result.records !== 'undefined' && resData.result.records.length > 0) {
                         this.centerNewDocuments = resData.result.records;
                     } else {
@@ -514,90 +503,6 @@ export default {
                 .catch(() => {
                     this.centerNewDocuments = [];
                 });
-        },
-        // 获取中心主任
-        _getCenterDirector() {
-            request({
-                url: this.url + '/4028bb817305cdab01730d6fc7270034',
-                method: 'get',
-                params: {
-                    _t: new Date().getTime()
-                }
-            })
-                .then(resData => {
-                    console.log('_getCenterDirector:', resData);
-                })
-                .catch(() => {});
-        },
-        // 获取科研成果
-        _getScientificResearchAchievements() {
-            request({
-                url: this.url + '/4028bb817305cdab01730e7a49bd0042',
-                method: 'get',
-                params: {
-                    _t: new Date().getTime()
-                }
-            })
-                .then(resData => {
-                    console.log('_getScientificResearchAchievements:', resData);
-                })
-                .catch(() => {});
-        },
-        // 获取学生获奖
-        _getStudentAwards() {
-            request({
-                url: this.url + '/4028bb817305cdab01730e7aa3ef0043',
-                method: 'get',
-                params: {
-                    _t: new Date().getTime()
-                }
-            })
-                .then(resData => {
-                    console.log('_getStudentAwards:', resData);
-                })
-                .catch(() => {});
-        },
-        // 获取中心资讯
-        _getLaboratoryEnvironment() {
-            request({
-                url: this.url + '/4028bb817305cdab01730e7eefc00047',
-                method: 'get',
-                params: {
-                    _t: new Date().getTime()
-                }
-            })
-                .then(resData => {
-                    console.log('_getLaboratoryEnvironment:', resData);
-                })
-                .catch(() => {});
-        },
-        // 获取联系我们
-        _getContactUs() {
-            request({
-                url: this.url + '/4028bb817305cdab01730d6c9dab0031',
-                method: 'get',
-                params: {
-                    _t: new Date().getTime()
-                }
-            })
-                .then(resData => {
-                    console.log('_getContactUs:', resData);
-                })
-                .catch(() => {});
-        },
-        // 获取概况
-        _getGeneralSituation() {
-            request({
-                url: this.url + '/4028bb817305cdab01730d6ad7af002f',
-                method: 'get',
-                params: {
-                    _t: new Date().getTime()
-                }
-            })
-                .then(resData => {
-                    console.log('_getGeneralSituation:', resData);
-                })
-                .catch(() => {});
         },
         changeMenu(menu) {
             this.$store.commit('changeMenu', { menu: menu });
