@@ -106,7 +106,7 @@ export default {
             menuItem: {},
             url: '/online/cgform/api/getData/4ea31cc0eaf942ab951de0e7eb4646a3',
             documents: [],
-            showDocument: this.$store.state.showDocument
+            showDocument: this.$store.state.showDocument ? this.$store.state.showDocument : { content: '没有内容' }
         };
     },
     computed: {
@@ -136,9 +136,6 @@ export default {
             return this.$store.state.menuItem;
         }
     },
-    created() {
-        // this.getData();
-    },
     mounted() {
         this.initial();
     },
@@ -158,7 +155,7 @@ export default {
         initial() {
             this.menu = this.$store.state.menu;
             this.menuItem = this.$store.state.menuItem;
-            if (typeof this.$store.state.showDocument.id !== 'undefined') {
+            if (typeof this.$store.state.showDocument !== 'undefined' && typeof this.$store.state.showDocument.id !== 'undefined') {
                 this.documents = [this.$store.state.showDocument];
                 this.showDocument = this.$store.state.showDocument;
             } else {

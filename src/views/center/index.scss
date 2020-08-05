@@ -3,7 +3,6 @@
 }
 .fr {
   float: left;
-  // margin-top: -9px;
   width: 49.5%;
 }
 .index_news_wrap {
@@ -19,10 +18,10 @@
   list-style: none;
 }
 .index_news_main .fl {
-  width:49.5%;
+  width: 49.5%;
   height: 330px;
   float: right;
-  background: #333;
+  // background: #333;
 }
 /* 首页中心动态 右侧新闻列表*/
 .index_news_con {
@@ -189,18 +188,16 @@
   display: inline-block;
   position: absolute;
   top: 0px;
-  left: 1%;
+  left: 0;
   z-index: 9;
-
-
 }
 .index_about_main .fr {
   width: 50%;
-  height: 380px;
+  height: 450px;
   display: inline-block;
   position: absolute;
-  top: 5%;
-  right: 5%;
+  top: 0;
+  right: 0;
   z-index: 8;
   background: url(../../assets/index_about_bg.jpg) #eeeeee no-repeat right bottom;
 }
@@ -232,6 +229,8 @@
 .index_about_main .fr .des p {
   text-indent: 2em;
   margin-bottom: 0px;
+  text-align: left;
+  font-size: 12px;
 }
 .index_about_txt .con {
   width: 1284px;

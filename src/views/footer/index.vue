@@ -1,41 +1,54 @@
 <template>
     <div class="footer_wrap">
-        <div class="w1200">
-            <!-- 上半部分 -->
-            <div style="margin-top:18px;">
-                <a-row>
-                    <!-- 才当 -->
-                    <a-col :span="10">
-                        <a-col :span="10">
-                            <div v-for="(menu) in filterMenus1" :key="menu.id"  @click="changeMenu(menu)" style="cursor: pointer; color: white;">
-                                {{menu.name}}
-                            </div>
-                        </a-col>
-                        <a-col :span="5">
-                            <div v-for="(menu) in filterMenus2" :key="menu.id" @click="changeMenu(menu)" style="cursor: pointer; color: white;">
-                                {{menu.name}}
-                            </div>
-                        </a-col>
+        <!-- 上半部分 -->
+        <a-row
+            type="flex"
+            justify="start"
+            align="middle"
+            style="background: url('/static/images/foot-1.jpg') no-repeat center top;height:171px"
+        >
+            <!-- 才当 -->
+            <a-col :span="9">
+                <a-row type="flex" justify="center" align="middle" style="height:100%;">
+                    <a-col :span="6">
+                        <div
+                            v-for="(menu) in filterMenus1"
+                            :key="menu.id"
+                            @click="changeMenu(menu)"
+                            style="cursor: pointer; color: white;margin-top:15px"
+                        >{{menu.name}}</div>
                     </a-col>
-                    <!-- 图标 -->
-                    <a-col :span="8">
-                        <div class="footer_logo">
-                            <a href="javascript:void(0);"><img src="../../assets/footer_logo.png"/></a>
-                        </div>
+                    <a-col :span="6">
+                        <div
+                            v-for="(menu) in filterMenus2"
+                            :key="menu.id"
+                            @click="changeMenu(menu)"
+                            style="cursor: pointer; color: white;margin-top:15px"
+                        >{{menu.name}}</div>
                     </a-col>
                 </a-row>
-            </div>
-            <div class="clear"></div>
-            <!-- 下半部分 -->
-            <div style="margin-bottom:18px; color:white;">
-                <a-row justify="center">
-                    <a-col offset="6" span="7">联系地址：厦门市集美区集美大道199号</a-col>
-                    <a-col span="6">联系电话：0592-6183811</a-col>
+            </a-col>
+            <!-- 图标 -->
+            <a-col :span="5">
+                <a-row type="flex" justify="center" align="middle" style="height:100%;">
+                    <div class="footer_logo">
+                        <img src="../../assets/footer_logo.png" />
+                    </div>
                 </a-row>
-                <a-row justify="center">
-                    <a-col>Copyright © 2018-2020 集美大学诚毅学院-检测与自动控制虚拟仿真实验教学中心 版权所有</a-col>
-                </a-row>
-            </div>
+            </a-col>
+        </a-row>
+
+        <div class="clear"></div>
+
+        <!-- 下半部分 -->
+        <div style=" color:white;background-color:#570a0a;height:98px">
+            <a-row justify="center" style="padding-top: 15px;font-size: 16px;">
+                <a-col offset="6" span="7">联系地址：厦门市集美区集美大道199号</a-col>
+                <a-col span="6">联系电话：0592-6183811</a-col>
+            </a-row>
+            <a-row justify="center" style="padding-top: 15px;font-size: 16px;">
+                <a-col>Copyright © 2018-2020 集美大学诚毅学院-检测与自动控制虚拟仿真实验教学中心 版权所有</a-col>
+            </a-row>
         </div>
     </div>
 </template>
@@ -43,11 +56,11 @@
 <script>
 import './index.scss';
 export default {
-    name: 'footer',
+    name: 'Footer',
     data() {
         return {
             menus: this.$store.state.menus
-        }
+        };
     },
     computed: {
         watchMenus() {
@@ -55,13 +68,13 @@ export default {
         },
         filterMenus1() {
             return this.menus.filter((item, index) => {
-                return index<4;
-            })
+                return index < 4;
+            });
         },
         filterMenus2() {
             return this.menus.filter((item, index) => {
-                return index>3;
-            })
+                return index > 3;
+            });
         }
     },
     mounted() {
@@ -80,12 +93,12 @@ export default {
         },
         changeMenu(menu) {
             if (typeof menu.jump_link !== 'undefined' && menu.jump_link !== null) {
-                window.open(menu.jump_link,"_blank")
+                window.open(menu.jump_link, '_blank')
             } else {
                 this.$store.commit('changeMenu', { menu: menu });
                 this.$store.commit('initialShowDocument');
             }
-        },
+        }
     }
 };
 </script>

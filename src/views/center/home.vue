@@ -16,17 +16,14 @@
         </a-carousel>
         <div class="index_news_wrap">
             <div class="w1200">
-                <div class="tit">中心动态</div>
                 <div class="clear"></div>
                 <div class="index_news_main">
                     <div class="fl">
+                        <div class="tit">视频简介</div>
                         <div class="news_focus_wrap">
                             <div class="news_focus_list">
                                 <video width="100%" height="330px" autoplay controls="controls">
-                                    <source
-                                        src="/center/static/videos/home.mov"
-                                        type="video/mp4"
-                                    />
+                                    <source src="/center/static/videos/home.mov" type="video/mp4" />
                                 </video>
                             </div>
                             <div class="news_focus_dot">
@@ -39,13 +36,10 @@
                         </div>
                     </div>
                     <div class="fr">
+                        <div class="tit">中心动态</div>
                         <div class="index_news_con">
                             <ul class="tit">
-                                <li
-                                    id="ph11"
-                                    onmouseover="setTab(&#39;ph1&#39;,1,2)"
-                                    class="active"
-                                >
+                                <li id="ph11" class="active">
                                     <a
                                         href="javascrip:void(0);"
                                         @click="changeMenuItem(centerTrends, centerNews)"
@@ -94,7 +88,7 @@
                 </div>
             </div>
         </div>
-        <div class="index_sys_wrap">
+        <div class="index_sys_wrap" style="margin-top: 30px;">
             <div class="w1200">
                 <div class="index_tit">
                     <p>TEACHING PLATFORM</p>
@@ -108,7 +102,7 @@
                                 <a-col :span="4">
                                     <a href="http://baidu.com" target="_blank">
                                         <div class="imgbg">
-                                            <img src="../../assets/MicroControl.png" />
+                                            <img src="../../assets/MicroControl.jpg" />
                                         </div>
                                         <p
                                             style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
@@ -131,7 +125,7 @@
                                         target="_blank"
                                     >
                                         <div class="imgbg">
-                                            <img src="../../assets/DynamicGrab.jpg" />
+                                            <img src="../../assets/DynamicGrab.png" />
                                         </div>
                                         <p
                                             style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
@@ -157,11 +151,11 @@
                                         target="_blank"
                                     >
                                         <div class="imgbg">
-                                            <img src="../../assets/other.jpg" />
+                                            <img src="../../assets/more.png" />
                                         </div>
                                         <p
                                             style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
-                                        >其他教学资源</p>
+                                        >更多教学资源</p>
                                     </a>
                                 </a-col>
                             </a-row>
@@ -171,7 +165,7 @@
                 <div class="clear"></div>
             </div>
         </div>
-        <div class="index_about_wrap">
+        <div class="index_about_wrap" style="margin-top: 15px;">
             <div class="w1200">
                 <div class="index_tit">
                     <p>INTRODUCTION</p>
@@ -180,7 +174,7 @@
                 <div class="clear"></div>
                 <div class="index_about_main">
                     <div class="fl">
-                        <img src="../../assets/qq.jpg" />
+                        <img style="height: 450px;width: 90%;" src="../../assets/qq.jpg" />
                     </div>
                     <div class="fr">
                         <div class="con">
@@ -193,12 +187,13 @@
                             </div>
                             <div class="des">
                                 <p>依托学院两大省级实验示范中心——电子信息实验教学示范中心（2013）和机电创新设计实验教学示范中心（2016），集美大学诚毅学院成立检测与自动控制虚拟仿真实验教学中心（以下简称中心）。通过电子信息和智能制造两大专业群建设，结合福建省本科高校教育教学改革研究项目、福建省服务产业特色专业、福建省专业综合改革试点项目、高等学校创新创业教育改革项目、福建省大学生校外实践教育基地建设项目、省级教育教学改革项目，学院共投入400多万元，用于检测与自动控制相关技术领域的实验室建设，主要用于科研和教学实验条件的改善。</p>
+                                <p>中心坚持“育人为本、科学规划、突出特色、共建共享、持续发展”的指导思想，以全面提高学生创新精神和实践能力为宗旨，以共享优质实验教学资源为核心，以建设信息化实验教学资源为重点，强化教学科研的有机互动，整合全校涉检测和自动控制相关专业的优质虚拟仿真实验教学资源，积极利用企业的开发和支持服务能力，构建的一个特色鲜明的虚拟仿真实验教学平台。秉持 “四融合、四促进”：“理论教学与实验教学相融合，促进课程体系改革；实践教学与科学研究相融合，促进实验平台建设；教学实验与学科竞赛相融合，促进创新精神培养；校内实验与企业工程实践相融合，促进实践能力提升”的实验教学理念，形成了模块化教学与多学科融合的实验教学体系。</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="clear"></div>
-                <div class="index_about_txt" style>
+                <div class="index_about_txt" style="margin-top: 60px;">
                     <div class="con">
                         <div class="item item01">
                             <a target="_blank" @click="changeMenuItem(teachersTroop, teamMember)">
@@ -507,16 +502,12 @@ export default {
                     this.centerNewDocuments = [];
                 });
         },
-        changeMenu(menu) {
-            this.$store.commit('changeMenu', { menu: menu });
-            this.$store.commit('initialShowDocument');
-        },
         changeMenuItem(menu, menuItem) {
-            this.$store.commit('changeMenuItem', { menu: menu, menuItem: menuItem });
-            this.$store.commit('initialShowDocument');
+            this.$router.push({ path: `/more/${menuItem.id}`, query: { menu: menu, menuItem: menuItem } });
         },
         changeShowDocument(menu, menuItem, showDocument) {
-            this.$store.commit('changeShowDocument', { menu: menu, menuItem: menuItem, showDocument: showDocument });
+            let pathName = showDocument.title.substr(0, 5);
+            this.$router.push({ path: `/${pathName}`, query: { menu: menu, menuItem: menuItem, showDocument: showDocument } });
         },
         formateData(time) {
             return typeof time !== 'undefined' && time != null ? time.substr(0, 10) : '';

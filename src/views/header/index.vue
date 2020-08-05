@@ -12,7 +12,7 @@
                     <div class="nav">
                         <ul style="list-style: none;    margin-left: -40px;">
                             <li>
-                                <a href="javascript:void(0);" @click="changeMenu(filterHome[0])">首页</a>
+                                <a href="javascript:void(0);" @click="goHome(filterHome[0])">首页</a>
                             </li>
                             <li v-for="menu in filterMenus" :key="menu.id">
                                 <a
@@ -144,17 +144,16 @@ export default {
                 });
             }
         },
+        goHome(menu) {
+            this.$router.push({ path: '/home', query: { menu: menu } });
+        },
         changeMenu(menu) {
             if (typeof menu.jump_link !== 'undefined' && menu.jump_link !== null) {
                 window.open(menu.jump_link, '_blank');
-            } else {
-                this.$store.commit('changeMenu', { menu: menu });
-                this.$store.commit('initialShowDocument');
             }
         },
         changeMenuItem(menu, menuItem) {
-            this.$store.commit('changeMenuItem', { menu: menu, menuItem: menuItem });
-            this.$store.commit('initialShowDocument');
+            this.$router.push({ path: `/${menuItem.name}`, query: { menu: menu, menuItem: menuItem } });
         },
         setMenus(menus) {
             this.$store.commit('setMenus', { menus: menus });
