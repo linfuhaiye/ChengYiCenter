@@ -8,10 +8,20 @@ const routes = [
     {
         path: '/',
         name: 'root',
-        redirect: '/home'
+        redirect: '/center/home'
+    },
+    {
+        path: '/center',
+        name: 'main',
+        redirect: '/center/home'
     },
     {
         path: '/home',
+        name: 'index',
+        redirect: '/center/home'
+    },
+    {
+        path: '/center/home',
         name: 'Home',
         component: Home
     }

@@ -9,7 +9,7 @@
                         itemscope
                         itemtype="http://schema.org/WebPage"
                         id="crumbs"
-                        style="    margin-top: -25px;"
+                        style="margin-top: -25px;"
                     >
                         您当前位置：
                         <span class="current">{{ menu.name }}</span>
@@ -105,6 +105,7 @@ export default {
             menu: {},
             menuItem: {},
             url: '/online/cgform/api/getData/4ea31cc0eaf942ab951de0e7eb4646a3',
+            baseUrl: '/online/cgform/api/getData/',
             documents: [],
             showDocument: this.$store.state.showDocument ? this.$store.state.showDocument : { content: '没有内容' }
         };
@@ -145,7 +146,7 @@ export default {
         },
         watchMenuItem(newVal) {
             this.menuItem = newVal;
-            this.getItemChildren();
+            this.getItemChildren(newVal);
         }
     },
     methods: {
@@ -159,7 +160,7 @@ export default {
                 this.documents = [this.$store.state.showDocument];
                 this.showDocument = this.$store.state.showDocument;
             } else {
-                this.getItemChildren();
+                this.getItemChildren(this.$store.state.menuItem);
             }
         },
         changeMenu(menu) {
@@ -168,23 +169,24 @@ export default {
         },
         changeMenuItem(menu, menuItem) {
             if (this.menuItem == menuItem && typeof this.showDocument.id !== 'undefined') {
-                this.getItemChildren();
+                this.getItemChildren(menuItem);
             }
-            this.$store.commit('changeMenuItem', { menu: menu, menuItem: menuItem });
-            this.$store.commit('initialShowDocument');
+            this.$router.push({ path: `/center/${menuItem.name}`, query: { menu: menu, menuItem: menuItem } });
+            // this.$store.commit('changeMenuItem', { menu: menu, menuItem: menuItem });
+            // this.$store.commit('initialShowDocument');
         },
         selectMenuItem(menuItem) {
             this.documents = [menuItem];
             this.showDocument = menuItem;
         },
-        getItemChildren() {
+        getItemChildren(menuItem) {
             request({
-                url: this.url,
+                url: this.baseUrl+menuItem.child_table_id,
                 method: 'get',
                 params: {
                     _t: new Date().getTime(),
                     parent_menu: this.menuItem.id,
-                    column: 'createTime',
+                    column: 'issue_data',
                     order: 'desc',
                     pageNo: 1,
                     pageSize: 20,

@@ -2,7 +2,7 @@
     <div>
         <span style="height: 150px; margin-top: 10px;">
             <div class="logo">
-                <a href="http://cyweb.xmzgzn.cn/cysyjx/index.php">
+                <a href="javascript:void(0);">
                     <img src="../../assets/logo.png" />
                 </a>
                 <span>检测与自动控制虚拟仿真实验教学中心</span>
@@ -145,7 +145,7 @@ export default {
             }
         },
         goHome(menu) {
-            this.$router.push({ path: '/home', query: { menu: menu } });
+            this.$router.push({ path: '/center/home', query: { menu: menu } });
         },
         changeMenu(menu) {
             if (typeof menu.jump_link !== 'undefined' && menu.jump_link !== null) {
@@ -153,7 +153,7 @@ export default {
             }
         },
         changeMenuItem(menu, menuItem) {
-            this.$router.push({ path: `/${menuItem.name}`, query: { menu: menu, menuItem: menuItem } });
+            this.$router.push({ path: `/center/${menuItem.name}`, query: { menu: menu, menuItem: menuItem } });
         },
         setMenus(menus) {
             this.$store.commit('setMenus', { menus: menus });

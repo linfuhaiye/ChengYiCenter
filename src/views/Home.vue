@@ -136,6 +136,7 @@ body {
     width: 100%;
     margin: 20px auto;
     text-align: left;
+    padding: 0px 20px;
 }
 .logo img {
     display: inline-block;
@@ -248,24 +249,9 @@ import Header from './header';
 import Footer from './footer';
 import centerHome from './center/home';
 import centerIndex from './center/index';
-import { noAuthLogin } from '@/api/login';
 
 export default {
     name: 'Home',
-    components: { Header, Footer, centerHome, centerIndex },
-    created() {
-        // this._noAuthLogin();
-    },
-    methods: {
-        _noAuthLogin() {
-            noAuthLogin()
-                .then(() => {
-                    console.debug('登录成功');
-                })
-                .catch(() => {
-                    console.debug('登陆失败，请刷新当前页面');
-                });
-        }
-    }
+    components: { Header, Footer, centerHome, centerIndex }
 };
 </script>

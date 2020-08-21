@@ -5,7 +5,7 @@
             type="flex"
             justify="start"
             align="middle"
-            style="background: url('/static/images/foot-1.jpg') no-repeat center top;height:171px"
+            style="background: url('/center/static/images/foot-1.jpg') no-repeat center top;height:171px"
         >
             <!-- 才当 -->
             <a-col :span="9">

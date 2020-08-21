@@ -8,10 +8,10 @@
                 <a-icon type="right-circle" style="font-size:40px" />
             </div>
             <div
-                style="background-image:url(./static/images/graduate.png);height:260px;margin-top:3px;background-position: center; background-repeat: no-repeat; background-size:100% 100%;"
+                style="background-image:url(/center/static/images/graduate.png);height:260px;margin-top:3px;background-position: center; background-repeat: no-repeat; background-size:100% 100%;"
             ></div>
             <div
-                style="background-image:url(./static/images/first_rate.jpg);height:260px;margin-top:3px;background-position: center; background-repeat: no-repeat; background-size:100% 100%;"
+                style="background-image:url(/center/static/images/first_rate.jpg);height:260px;margin-top:3px;background-position: center; background-repeat: no-repeat; background-size:100% 100%;"
             ></div>
         </a-carousel>
         <div class="index_news_wrap">
@@ -100,7 +100,7 @@
                         <div class="swiper-wrapper" style="transition-duration: 0ms;">
                             <a-row type="flex" justify="space-around" align="middle">
                                 <a-col :span="4">
-                                    <a href="http://baidu.com" target="_blank">
+                                    <a href="https://ide.mindplus.top/" target="_blank">
                                         <div class="imgbg">
                                             <img src="../../assets/MicroControl.jpg" />
                                         </div>
@@ -110,7 +110,7 @@
                                     </a>
                                 </a-col>
                                 <a-col :span="4">
-                                    <a href="http://baidu.com" target="_blank">
+                                    <a href="https://ide.mindplus.top/" target="_blank">
                                         <div class="imgbg">
                                             <img src="../../assets/Programming .jpg" />
                                         </div>
@@ -259,7 +259,7 @@ export default {
     data() {
         return {
             menuUrl: '/online/cgform/api/getTreeData/497b842359a248bcbc310c2c1a131c74',
-            documentUrl: '/online/cgform/api/getData/4ea31cc0eaf942ab951de0e7eb4646a3',
+            documentUrl: '/online/cgform/api/getData/c4adcebf77be4cd5995b626a395c7a99',
             // 中心动态
             centerTrends: {},
             // 中心资讯
@@ -483,7 +483,6 @@ export default {
                 method: 'get',
                 params: {
                     _t: new Date().getTime(),
-                    parent_menu: this.centerNews.id,
                     column: 'sort_no',
                     order: 'asc',
                     pageNo: 1,
@@ -503,11 +502,11 @@ export default {
                 });
         },
         changeMenuItem(menu, menuItem) {
-            this.$router.push({ path: `/more/${menuItem.id}`, query: { menu: menu, menuItem: menuItem } });
+            this.$router.push({ path: `/center/${menuItem.name}`, query: { menu: menu, menuItem: menuItem } });
         },
         changeShowDocument(menu, menuItem, showDocument) {
             let pathName = showDocument.title.substr(0, 5);
-            this.$router.push({ path: `/${pathName}`, query: { menu: menu, menuItem: menuItem, showDocument: showDocument } });
+            this.$router.push({ path: `/center/${pathName}`, query: { menu: menu, menuItem: menuItem, showDocument: showDocument } });
         },
         formateData(time) {
             return typeof time !== 'undefined' && time != null ? time.substr(0, 10) : '';
