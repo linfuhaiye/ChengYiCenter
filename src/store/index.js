@@ -38,11 +38,11 @@ export default new Vuex.Store({
 
         /**
          * 初始化显示文档
-         * 
+         *
          * @param {*} state 状态
          */
         initialShowDocument(state) {
-            state.showDocument =  {
+            state.showDocument = {
                 content: '没有内容'
             };
         },
@@ -75,7 +75,7 @@ export default new Vuex.Store({
 
         /**
          * 修改显示文档
-         * 
+         *
          * @param {*} state 状态
          * @param {*} data 数据
          */

@@ -5,12 +5,7 @@
                 <p class="tit">{{ menu.name }}</p>
                 <div class="clear"></div>
                 <div class="crumb" style="color:white">
-                    <div
-                        itemscope
-                        itemtype="http://schema.org/WebPage"
-                        id="crumbs"
-                        style="margin-top: -25px;"
-                    >
+                    <div itemscope itemtype="http://schema.org/WebPage" id="crumbs" style="margin-top: -25px;">
                         您当前位置：
                         <span class="current">{{ menu.name }}</span>
                         »
@@ -28,10 +23,7 @@
                     <div class="fl" style="max-height: 20%;">
                         <div class="nav_tit" style="text-align: left">{{ menu.name }}</div>
                         <div class="clear"></div>
-                        <ul
-                            v-if="typeof menu.children != 'undefined' && menu.children.length > 0"
-                            style="list-style: none;margin-left: -40px;"
-                        >
+                        <ul v-if="typeof menu.children != 'undefined' && menu.children.length > 0" style="list-style: none;margin-left: -40px;">
                             <li
                                 v-for="item in menu.children"
                                 :key="item.id"
@@ -46,22 +38,14 @@
                     <div class="fr">
                         <div class="nav_tit">{{ menuItem.name }}</div>
                         <div class="clear"></div>
-                        <div
-                            v-if="documents.length <= 1"
-                            v-html="showDocument.content"
-                            class="ny_wrap"
-                        ></div>
+                        <div v-if="documents.length <= 1" v-html="showDocument.content" class="ny_wrap"></div>
                         <div v-else class="ny_wrap">
                             <div>
-                                <div
-                                    class="news_list"
-                                    v-for="item in filterHasIconDocuments"
-                                    :key="item.id"
-                                >
+                                <div class="news_list" v-for="item in filterHasIconDocuments" :key="item.id">
                                     <dl>
                                         <a href="javascrip:void(0);" @click="selectMenuItem(item)">
                                             <dt>
-                                                <img :src="getBaseUrl()+'/'+item.icon" />
+                                                <img :src="getBaseUrl() + '/' + item.icon" />
                                             </dt>
                                             <dd>
                                                 <h3>{{ item.title }}</h3>
@@ -72,19 +56,14 @@
                                         </a>
                                     </dl>
                                 </div>
-                                <div
-                                    class="about_detail"
-                                    v-for="item in filterNoIconDocuments"
-                                    :key="item.id"
-                                >
+                                <div class="about_detail" v-for="item in filterNoIconDocuments" :key="item.id">
                                     <a
                                         href="javascrip:void(0);"
                                         style="display:inline-block; width:80%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"
                                         @click="selectMenuItem(item)"
-                                    >{{ item.title }}</a>
-                                    <span
-                                        style="display:inline-block; overflow:hidden; margin-left: 20px;"
-                                    >{{ formateTime(item.issue_data) }}</span>
+                                        >{{ item.title }}</a
+                                    >
+                                    <span style="display:inline-block; overflow:hidden; margin-left: 20px;">{{ formateTime(item.issue_data) }}</span>
                                 </div>
                             </div>
                         </div>
@@ -181,7 +160,7 @@ export default {
         },
         getItemChildren(menuItem) {
             request({
-                url: this.baseUrl+menuItem.child_table_id,
+                url: this.baseUrl + menuItem.child_table_id,
                 method: 'get',
                 params: {
                     _t: new Date().getTime(),

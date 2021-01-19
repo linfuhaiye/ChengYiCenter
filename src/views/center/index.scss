@@ -565,3 +565,19 @@
     margin: 0px auto;
   }
 }
+
+.exam-title {
+  font-size: 16px;
+  color: white;
+  width: 191px;
+  background-color: cornflowerblue;
+  margin: auto; 
+  min-height:50px;
+  line-height: 50px;
+}
+
+.exam-title-content {
+  display:inline-block; 
+  vertical-align:middle;
+  line-height: initial;
+}

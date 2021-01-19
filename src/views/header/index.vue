@@ -15,23 +15,10 @@
                                 <a href="javascript:void(0);" @click="goHome(filterHome[0])">首页</a>
                             </li>
                             <li v-for="menu in filterMenus" :key="menu.id">
-                                <a
-                                    href="javascript:void(0);"
-                                    @click="changeMenu(menu)"
-                                >{{ menu.name }}</a>
-                                <div
-                                    v-if="menu.has_child === '1' && typeof menu.children !== 'undefined' && menu.children.length > 0"
-                                    class="subnav"
-                                >
-                                    <div
-                                        v-for="menuItem in menu.children"
-                                        :key="menuItem.id"
-                                        class="subnav-box"
-                                    >
-                                        <a
-                                            href="javascript:void(0);"
-                                            @click="changeMenuItem(menu, menuItem)"
-                                        >{{ menuItem.name }}</a>
+                                <a href="javascript:void(0);" @click="changeMenu(menu)">{{ menu.name }}</a>
+                                <div v-if="menu.has_child === '1' && typeof menu.children !== 'undefined' && menu.children.length > 0" class="subnav">
+                                    <div v-for="menuItem in menu.children" :key="menuItem.id" class="subnav-box">
+                                        <a href="javascript:void(0);" @click="changeMenuItem(menu, menuItem)">{{ menuItem.name }}</a>
                                     </div>
                                 </div>
                             </li>
@@ -53,7 +40,8 @@ export default {
     data() {
         return {
             menus: [],
-            menuUrl: '/online/cgform/api/getTreeData/497b842359a248bcbc310c2c1a131c74'
+            menuUrl: '/online/cgform/api/getTreeData/497b842359a248bcbc310c2c1a131c74',
+            addViewCountUrl: '/online/cgform/api/doButton'
         };
     },
     computed: {
@@ -74,8 +62,25 @@ export default {
     methods: {
         _noAuthLogin() {
             noAuthLogin().then(() => {
+                this._addViewCount();
                 this._getData();
             });
+        },
+        _addViewCount() {
+            request({
+                url: this.addViewCountUrl,
+                method: 'post',
+                data: {
+                    formId: '497b842359a248bcbc310c2c1a131c74',
+                    buttonCode: 'add_view_count',
+                    dataId: '1286502509904404482'
+                }
+            })
+                .then(resData => {
+                    console.log('新增结果', resData);
+                    this._getData();
+                })
+                .catch(() => {});
         },
         _getData() {
             request({

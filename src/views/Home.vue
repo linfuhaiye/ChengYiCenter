@@ -16,9 +16,7 @@
                     <Header />
                 </a-layout-header>
                 <a-layout-content align="middle" :style="{ padding: '0 50px', marginTop: '210px' }">
-                    <div
-                        v-if="this.$store.state.menu == null || this.$store.state.menu.code === 'HOME'"
-                    >
+                    <div v-if="this.$store.state.menu == null || this.$store.state.menu.code === 'HOME'">
                         <center-home></center-home>
                     </div>
                     <div v-else>
@@ -67,7 +65,7 @@ body {
     padding: 0px 120px;
     color: #929292;
     font-size: 14px;
-    background: url('/center/static/images/foot-1.jpg') no-repeat center top;
+    background: url('../assets/foot-1.jpg') no-repeat center top;
 }
 #components-layout-demo-basic .ant-layout-content {
     color: rgb(0, 0, 0);

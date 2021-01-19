@@ -40,46 +40,30 @@
                         <div class="index_news_con">
                             <ul class="tit">
                                 <li id="ph11" class="active">
-                                    <a
-                                        href="javascrip:void(0);"
-                                        @click="changeMenuItem(centerTrends, centerNews)"
-                                    >中心资讯</a>
+                                    <a href="javascrip:void(0);" @click="changeMenuItem(centerTrends, centerNews)">中心资讯</a>
                                 </li>
                             </ul>
                             <div class="list">
                                 <div id="con_ph1_1" style="display: block;">
                                     <ul>
                                         <li v-for="item in centerNewDocuments" :key="item.id">
-                                            <a
-                                                href="javascrip:void(0);"
-                                                @click="changeShowDocument(centerTrends, centerNews, item)"
-                                            >{{item.title}}</a>
-                                            <span>{{formateData(item.issue_data)}}</span>
+                                            <a href="javascrip:void(0);" @click="changeShowDocument(centerTrends, centerNews, item)">{{ item.title }}</a>
+                                            <span>{{ formateData(item.issue_data) }}</span>
                                         </li>
                                     </ul>
                                     <div class="more">
-                                        <a
-                                            href="javascrip:void(0);"
-                                            @click="changeMenuItem(centerTrends, allNews)"
-                                            style="color:black"
-                                        >更多&gt;&gt;</a>
+                                        <a href="javascrip:void(0);" @click="changeMenuItem(centerTrends, allNews)" style="color:black">更多&gt;&gt;</a>
                                     </div>
                                 </div>
                                 <div id="con_ph1_2" style="display: none;">
                                     <ul>
                                         <li>
-                                            <a
-                                                href="http://cyweb.xmzgzn.cn/cysyjx/?p=138"
-                                                target="_blank"
-                                            >2018年省级虚拟仿真实验教学中心申报说明</a>
+                                            <a href="http://cyweb.xmzgzn.cn/cysyjx/?p=138" target="_blank">2018年省级虚拟仿真实验教学中心申报说明</a>
                                             <span>2018-06-01</span>
                                         </li>
                                     </ul>
                                     <div class="more">
-                                        <a
-                                            href="javascrip:void(0);"
-                                            @click="changeMenuItem(centerTrends, centerNews)"
-                                        >更多&gt;&gt;</a>
+                                        <a href="javascrip:void(0);" @click="changeMenuItem(centerTrends, centerNews)">更多&gt;&gt;</a>
                                     </div>
                                 </div>
                             </div>
@@ -104,58 +88,43 @@
                                         <div class="imgbg">
                                             <img src="../../assets/MicroControl.jpg" />
                                         </div>
-                                        <p
-                                            style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
-                                        >微控制器编程平台</p>
+                                        <div class="exam-title"><div class="exam-title-content">微控制器编程平台</div></div>
+                                        <!-- <p class="exam-title">微控制器编程平台</p> -->
                                     </a>
                                 </a-col>
                                 <a-col :span="4">
-                                    <a href="https://ide.mindplus.top/" target="_blank">
+                                    <a href="http://subway.shangyunsoft.com/web/exam/user/login" target="_blank">
                                         <div class="imgbg">
-                                            <img src="../../assets/Programming .jpg" />
+                                            <img :width="'190px;'" :height="'300px;'" src="../../assets/subway.png" />
                                         </div>
-                                        <p
-                                            style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
-                                        >机器人编程平台</p>
+                                        <div class="exam-title"><div class="exam-title-content">地铁屏蔽门自动控制虚拟仿真实验</div></div>
+                                        <!-- <p class="exam-title">地铁屏蔽门自动控制虚拟仿真实验</p> -->
                                     </a>
                                 </a-col>
                                 <a-col :span="4">
-                                    <a
-                                        href="http://119.3.252.129:8081/VREducation/"
-                                        target="_blank"
-                                    >
+                                    <a href="http://119.3.252.129:8081/VREducation/" target="_blank">
                                         <div class="imgbg">
                                             <img src="../../assets/DynamicGrab.png" />
                                         </div>
-                                        <p
-                                            style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
-                                        >动态抓取实验</p>
+                                        <div class="exam-title"><div class="exam-title-content">基于机器视觉的工业机器人动态抓取虚拟仿真实验</div></div>
+                                        <!-- <p class="exam-title">基于机器视觉的工业机器人动态抓取虚拟仿真实验</p> -->
                                     </a>
                                 </a-col>
                                 <a-col :span="4">
-                                    <a
-                                        href="http://subway.shangyunsoft.com/web/exam/user/login"
-                                        target="_blank"
-                                    >
+                                    <a href="http://119.3.252.129:8081/uva/" target="_blank">
                                         <div class="imgbg">
                                             <img src="../../assets/control.jpg" />
                                         </div>
-                                        <p
-                                            style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
-                                        >PID控制实验</p>
+                                        <div class="exam-title"><div class="exam-title-content">基于图形化编程的无人机PID控制虚拟仿真实验</div></div>
+                                        <!-- <p class="exam-title">基于图形化编程的无人机PID控制虚拟仿真实验</p> -->
                                     </a>
                                 </a-col>
                                 <a-col :span="4">
-                                    <a
-                                        @click="changeMenuItem(resourcePlatform, teachingResources)"
-                                        target="_blank"
-                                    >
+                                    <a @click="changeMenuItem(resourcePlatform, teachingResources)" target="_blank">
                                         <div class="imgbg">
                                             <img src="../../assets/more.png" />
                                         </div>
-                                        <p
-                                            style="font-size: 16px;color: white;width: 191px;background-color: cornflowerblue;margin: auto;"
-                                        >更多教学资源</p>
+                                        <div class="exam-title"><div class="exam-title-content">更多教学资源</div></div>
                                     </a>
                                 </a-col>
                             </a-row>
@@ -186,8 +155,13 @@
                                 <span>检测与自动控制虚拟仿真实验教学中心</span>
                             </div>
                             <div class="des">
-                                <p>依托学院两大省级实验示范中心——电子信息实验教学示范中心（2013）和机电创新设计实验教学示范中心（2016），集美大学诚毅学院成立检测与自动控制虚拟仿真实验教学中心（以下简称中心）。通过电子信息和智能制造两大专业群建设，结合福建省本科高校教育教学改革研究项目、福建省服务产业特色专业、福建省专业综合改革试点项目、高等学校创新创业教育改革项目、福建省大学生校外实践教育基地建设项目、省级教育教学改革项目，学院共投入400多万元，用于检测与自动控制相关技术领域的实验室建设，主要用于科研和教学实验条件的改善。</p>
-                                <p>中心坚持“育人为本、科学规划、突出特色、共建共享、持续发展”的指导思想，以全面提高学生创新精神和实践能力为宗旨，以共享优质实验教学资源为核心，以建设信息化实验教学资源为重点，强化教学科研的有机互动，整合全校涉检测和自动控制相关专业的优质虚拟仿真实验教学资源，积极利用企业的开发和支持服务能力，构建的一个特色鲜明的虚拟仿真实验教学平台。秉持 “四融合、四促进”：“理论教学与实验教学相融合，促进课程体系改革；实践教学与科学研究相融合，促进实验平台建设；教学实验与学科竞赛相融合，促进创新精神培养；校内实验与企业工程实践相融合，促进实践能力提升”的实验教学理念，形成了模块化教学与多学科融合的实验教学体系。</p>
+                                <p>
+                                    依托学院两大省级实验示范中心——电子信息实验教学示范中心（2013）和机电创新设计实验教学示范中心（2016），集美大学诚毅学院成立检测与自动控制虚拟仿真实验教学中心（以下简称中心）。通过电子信息和智能制造两大专业群建设，结合福建省本科高校教育教学改革研究项目、福建省服务产业特色专业、福建省专业综合改革试点项目、高等学校创新创业教育改革项目、福建省大学生校外实践教育基地建设项目、省级教育教学改革项目，学院共投入400多万元，用于检测与自动控制相关技术领域的实验室建设，主要用于科研和教学实验条件的改善。
+                                </p>
+                                <p>
+                                    中心坚持“育人为本、科学规划、突出特色、共建共享、持续发展”的指导思想，以全面提高学生创新精神和实践能力为宗旨，以共享优质实验教学资源为核心，以建设信息化实验教学资源为重点，强化教学科研的有机互动，整合全校涉检测和自动控制相关专业的优质虚拟仿真实验教学资源，积极利用企业的开发和支持服务能力，构建的一个特色鲜明的虚拟仿真实验教学平台。秉持
+                                    “四融合、四促进”：“理论教学与实验教学相融合，促进课程体系改革；实践教学与科学研究相融合，促进实验平台建设；教学实验与学科竞赛相融合，促进创新精神培养；校内实验与企业工程实践相融合，促进实践能力提升”的实验教学理念，形成了模块化教学与多学科融合的实验教学体系。
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -202,37 +176,25 @@
                             </a>
                         </div>
                         <div class="item item02">
-                            <a
-                                target="_blank"
-                                @click="changeMenuItem(achievements, scientificResearchAchievements)"
-                            >
+                            <a target="_blank" @click="changeMenuItem(achievements, scientificResearchAchievements)">
                                 <div class="img"></div>
                                 <div class="desc">科研立项</div>
                             </a>
                         </div>
                         <div class="item item03">
-                            <a
-                                @click="changeMenuItem(achievements, teachingAchievements)"
-                                target="_blank"
-                            >
+                            <a @click="changeMenuItem(achievements, teachingAchievements)" target="_blank">
                                 <div class="img"></div>
                                 <div class="desc">教学成果</div>
                             </a>
                         </div>
                         <div class="item item04">
-                            <a
-                                @click="changeMenuItem(resourcePlatform, experimentPlatform)"
-                                target="_blank"
-                            >
+                            <a @click="changeMenuItem(resourcePlatform, experimentPlatform)" target="_blank">
                                 <div class="img"></div>
                                 <div class="desc">实验平台</div>
                             </a>
                         </div>
                         <div class="item item05">
-                            <a
-                                @click="changeMenuItem(generalProfile, schoolProfile)"
-                                target="_blank"
-                            >
+                            <a @click="changeMenuItem(generalProfile, schoolProfile)" target="_blank">
                                 <div class="img"></div>
                                 <div class="desc">联系我们</div>
                             </a>
